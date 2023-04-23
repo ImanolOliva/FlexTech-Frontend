@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-6">
+          <form [formGroup]="form">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="form-label">apellido</label>
+              <input type="text" class="form-control" id="apellido" formControlName="apellido">
+            </div>
+            <div class="mb-3">
+              <label for="fechaNacimiento" class="form-label">fecha de Nacimiento</label>
+              <input type="text" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento">
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="direccion" formControlName="direccion">
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">telefono</label>
+              <input type="text" class="form-control" id="telefono" formControlName="telefono">
+            </div>
+            <div class="mb-3">
+              <label for="pais" class="form-label">pais</label>
+              <input type="text" class="form-control" id="pais" formControlName="pais">
+            </div>
+            <div>
+              <button type="submit" (click)="save()" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-10">
+            <caption>Lista de Personas</caption>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Fecha Nacimiento</th>
+                  <th scope="col">Direccion</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Pais</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tr *ngFor="let item of personaResponse">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>{{item.fechaNacimiento}}</td>
+                <td>{{item.direccion}}</td>
+                <td>{{item.telefono}}</td>
+                <td>{{item.pais}}</td>
+                <td>
+                    <button type="button" class="btn" (click)="edit(item.id)">
+                        <i class="fa-solid fa-pen"></i>
+                        Editar</button>
+                    <button type="button" class="btn" (click)="delete(item.id)">
+                        <i class="fa-sharp fa-solid fa-trash"></i>
+                        Eliminar</button>
+                </td>
+              </tr>
+            </table>
+      </div>
+</div>

@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModuleModule } from './pages/pages-module.module';
-import { PersonasComponent } from './pages/personas/personas.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 ;
 
 // Note we need a separate function as it's required
@@ -14,14 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    PersonasComponent
+    NavbarComponent
 
   ],
   imports: [
     BrowserModule,
     PagesModuleModule,
     AppRoutingModule,
-    ReactiveFormsModule,
 
 
   ],

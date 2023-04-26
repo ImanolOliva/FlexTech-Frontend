@@ -12,14 +12,15 @@ export class PersonasComponent implements OnInit {
 
   personaResponse: Persona[] = [];
   form: FormGroup;
-  flat: boolean;
   isEditing: boolean = false;
   selectId: number = 0;
+  loading : boolean = false;
 
   constructor(private servicePerson: PersonaServiceService) { };
 
   ngOnInit() {
     this.createForm();
+    this.getPersonas();
   }
 
   private createForm() {
@@ -39,7 +40,7 @@ export class PersonasComponent implements OnInit {
         this.personaResponse = data;
       },
       error(err) {
-        console.log("Estoy en el error");
+        console.log("Estoy en el error del GetPersonas");
         console.log(err);
       },
       complete() {

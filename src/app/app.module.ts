@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModuleModule } from './pages/pages-module.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
-;
+import { HomeComponent } from './pages/home/home.component';
 
 // Note we need a separate function as it's required
 // by the AOT compiler.
@@ -13,15 +13,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
-
+    NavbarComponent,
+    HomeComponent
+ 
   ],
   imports: [
     BrowserModule,
     PagesModuleModule,
-    AppRoutingModule,
-
-
+    AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

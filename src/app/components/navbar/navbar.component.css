@@ -1,4 +1,9 @@
-nav{
-    justify-content: center;
+header{
     display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(214, 142, 8);
+    color:black;
+    margin-bottom: 20px;
 }
